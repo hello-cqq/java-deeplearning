@@ -3,16 +3,16 @@ package deeplearning.math;
 import java.util.Arrays;
 
 /**
- * Éî¶ÈÑ§Ï°ÖĞ¾ØÕóµÄÏà¹Ø¼ÆËã
+ * æ·±åº¦å­¦ä¹ ä¸­çŸ©é˜µçš„ç›¸å…³è®¡ç®—
  * @author cqq	1324095615@qq.com
  * @version 1.0
  * 
  */
 public class Matrix {
 	/**
-	 * »ñÈ¡nÎ¬µ¥Î»¾ØÕó
-	 * @param n Ö¸¶¨µ¥Î»¾ØÕóµÄÎ¬Êı
-	 * @return ·µ»ØnÎ¬µ¥Î»¾ØÕó
+	 * è·å–nç»´å•ä½çŸ©é˜µ
+	 * @param n æŒ‡å®šå•ä½çŸ©é˜µçš„ç»´æ•°
+	 * @return è¿”å›nç»´å•ä½çŸ©é˜µ
 	 */
 	public  static double[][] getIdentityMatrix( int n)
 	{
@@ -23,21 +23,21 @@ public class Matrix {
 			return Identity_Matrix;
 		}
 		else {
-			System.out.println("ÊäÈë²»ºÏ·¨£¬ÇëÈ·±£ÊäÈë²ÎÊınÎª´óÓÚ0µÄintĞÍÕûÊı");
+			System.out.println("è¾“å…¥ä¸åˆæ³•ï¼Œè¯·ç¡®ä¿è¾“å…¥å‚æ•°nä¸ºå¤§äº0çš„intå‹æ•´æ•°");
 			return null;
 		}
 	}
 	
 	/**
-	 * ¶Ôµ¥¸ö¾ØÕó½øĞĞ¼òµ¥µÄÊıÑ§¼ÆËã£ºÓë±êÁ¿Ïà³Ë£¬Óë±êÁ¿Ïà¼Ó
-	 * @param m ÊäÈë¾ØÕóorÊı×é
-	 * @param w Óë¾ØÕóÏà³ËµÄÏµÊı
-	 * @param c Óë¾ØÕóÏà¼ÓµÄÏµÊı
-	 * @return ·µ»ØÔËËãºóµÄ¾ØÕó
+	 * å¯¹å•ä¸ªçŸ©é˜µè¿›è¡Œç®€å•çš„æ•°å­¦è®¡ç®—ï¼šä¸æ ‡é‡ç›¸ä¹˜ï¼Œä¸æ ‡é‡ç›¸åŠ 
+	 * @param m è¾“å…¥çŸ©é˜µoræ•°ç»„
+	 * @param w ä¸çŸ©é˜µç›¸ä¹˜çš„ç³»æ•°
+	 * @param c ä¸çŸ©é˜µç›¸åŠ çš„ç³»æ•°
+	 * @return è¿”å›è¿ç®—åçš„çŸ©é˜µ
 	 */
 	public static double[][] matrixCompute(double[][] m,double w,double c)
 	{
-		double[][] m_result=null;//¶¨Òå·µ»Ø¾ØÕó
+		double[][] m_result=null;//å®šä¹‰è¿”å›çŸ©é˜µ
 		try {
 			m_result = new double[m.length][m[0].length];
 			for(int i=0;i<m.length;i++)
@@ -45,17 +45,17 @@ public class Matrix {
 					m_result[i][j] = w*m[i][j]+c;
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("³öÏÖÒì³££¬ÇëÈ·¶¨ÊäÈëÊÇ·ñÕıÈ·");
+			System.out.println("å‡ºç°å¼‚å¸¸ï¼Œè¯·ç¡®å®šè¾“å…¥æ˜¯å¦æ­£ç¡®");
 			e.printStackTrace();
 		}
 		return m_result;
 	}
 	
 	/**
-	 * ¾ØÕóÏà¼Ó
-	 * @param a ÊäÈë¾ØÕó1
-	 * @param b ÊäÈë¾ØÕó2
-	 * @return ·µ»ØÏà¼ÓºóµÄ¾ØÕó
+	 * çŸ©é˜µç›¸åŠ 
+	 * @param a è¾“å…¥çŸ©é˜µ1
+	 * @param b è¾“å…¥çŸ©é˜µ2
+	 * @return è¿”å›ç›¸åŠ åçš„çŸ©é˜µ
 	 * @throws Exception
 	 */
 	public static double[][] matrixAdd(double[][] a,double[][] b)
@@ -68,9 +68,9 @@ public class Matrix {
 	}
 	
 	/**
-	 * ¾ØÕó×ªÖÃ
-	 * @param A ÊäÈë¾ØÕó
-	 * @return ·µ»Ø×ªÖÃºóµÄ¾ØÕó
+	 * çŸ©é˜µè½¬ç½®
+	 * @param A è¾“å…¥çŸ©é˜µ
+	 * @return è¿”å›è½¬ç½®åçš„çŸ©é˜µ
 	 * @throws Exception
 	 */
 	public static double[][] matrixTranspose(double[][] A)
@@ -83,10 +83,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * ¾ØÕó±ê×¼Ïà³Ë
-	 * @param a ÊäÈë¾ØÕó1
-	 * @param b ÊäÈë¾ØÕó2
-	 * @return ·µ»ØÏà³ËºóµÄ¾ØÕó
+	 * çŸ©é˜µæ ‡å‡†ç›¸ä¹˜
+	 * @param a è¾“å…¥çŸ©é˜µ1
+	 * @param b è¾“å…¥çŸ©é˜µ2
+	 * @return è¿”å›ç›¸ä¹˜åçš„çŸ©é˜µ
 	 * @throws Exception
 	 */
 	public static double[][] matrixProduct(double[][] a,double[][] b)
@@ -107,10 +107,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * ¼ÆËãHadamard¾ØÕó£¬Á½¾ØÕóÔªËØ¶ÔÓ¦Ïà³Ë
-	 * @param a ÊäÈë¾ØÕó1
-	 * @param b ÊäÈë¾ØÕó2
-	 * @return ·µ»ØHadamard³Ë»ı¾ØÕó
+	 * è®¡ç®—HadamardçŸ©é˜µï¼Œä¸¤çŸ©é˜µå…ƒç´ å¯¹åº”ç›¸ä¹˜
+	 * @param a è¾“å…¥çŸ©é˜µ1
+	 * @param b è¾“å…¥çŸ©é˜µ2
+	 * @return è¿”å›Hadamardä¹˜ç§¯çŸ©é˜µ
 	 * @throws Exception
 	 */
 	public static double[][] hadamardProduct(double[][] a,double[][] b)
@@ -126,12 +126,12 @@ public class Matrix {
 	}
 	
 	/**
-	 * ¼ÆËãĞĞÁĞÊ½(m,n)×ø±êÏÂµÄÓà×ÓÊ½
-	 * ×¢Òâ£ºm,n¾ù´Ó1¿ªÊ¼,²»ÊÇ°´ÕÕÊı×éÏÂ±ê
-	 * @param A ÊäÈë¾ØÕó1
-	 * @param m ºá×ø±ê
-	 * @param n ×İ×ø±ê
-	 * @return ·µ»Ø(m,n)×ø±êÏÂµÄÓà×ÓÊ½
+	 * è®¡ç®—è¡Œåˆ—å¼(m,n)åæ ‡ä¸‹çš„ä½™å­å¼
+	 * æ³¨æ„ï¼šm,nå‡ä»1å¼€å§‹,ä¸æ˜¯æŒ‰ç…§æ•°ç»„ä¸‹æ ‡
+	 * @param A è¾“å…¥çŸ©é˜µ1
+	 * @param m æ¨ªåæ ‡
+	 * @param n çºµåæ ‡
+	 * @return è¿”å›(m,n)åæ ‡ä¸‹çš„ä½™å­å¼
 	 */
 	public static double[][] getCofactor(double[][] A, int m,int n)
 	{
@@ -160,9 +160,9 @@ public class Matrix {
 	}
 	
 	/**
-	 * ¼ÆËãĞĞÁĞÊ½µÄÖµ
-	 * @param A ÊäÈëĞĞÁĞÊ½A
-	 * @return ·µ»ØĞĞÁĞÊ½µÄÖµ
+	 * è®¡ç®—è¡Œåˆ—å¼çš„å€¼
+	 * @param A è¾“å…¥è¡Œåˆ—å¼A
+	 * @return è¿”å›è¡Œåˆ—å¼çš„å€¼
 	 */
 	public static double det(double[][] A)
 	{
@@ -185,17 +185,17 @@ public class Matrix {
 	}
 	
 	/**
-	 * ¼ÆËãÄæ¾ØÕóA-1 = A*\|A|
-	 * ¿ÉÄæÌõ¼ş£ºdet(A)²»Îª0£¬ÇÒAÎª·½Õó
-	 * @param A ÊäÈë·½ÕóA
-	 * @return ·µ»ØÄæ¾ØÕó£¬Èç¹û¾ØÕó²»¿ÉÄæ·µ»Ønull
+	 * è®¡ç®—é€†çŸ©é˜µA-1 = A*\|A|
+	 * å¯é€†æ¡ä»¶ï¼šdet(A)ä¸ä¸º0ï¼Œä¸”Aä¸ºæ–¹é˜µ
+	 * @param A è¾“å…¥æ–¹é˜µA
+	 * @return è¿”å›é€†çŸ©é˜µï¼Œå¦‚æœçŸ©é˜µä¸å¯é€†è¿”å›null
 	 */
 	public static double[][] matrixInverse(double[][] A)
 	{
 		double[][] result = new double[A.length][A[0].length];
 		double val = det(A);
 		if(val==0){
-			System.out.println("ĞĞÁĞÊ½Îª0£¬¾ØÕó²»¿ÉÄæ");
+			System.out.println("è¡Œåˆ—å¼ä¸º0ï¼ŒçŸ©é˜µä¸å¯é€†");
 			result = null;
 		}
 		else {
@@ -215,9 +215,9 @@ public class Matrix {
 	}
 	
 	/**
-	 * ¾ØÕó·´×ª
-	 * @param A ÊäÈë¾ØÕóA
-	 * @return ·µ»Ø·´×ª¾ØÕó
+	 * çŸ©é˜µåè½¬
+	 * @param A è¾“å…¥çŸ©é˜µA
+	 * @return è¿”å›åè½¬çŸ©é˜µ
 	 */
 	public static double[][] matrixReverse(double[][] A)
 	{
@@ -233,9 +233,9 @@ public class Matrix {
 	}
 	
 	/**
-	 * ÏòÁ¿·´×ª
-	 * @param A ÊäÈëÏòÁ¿A
-	 * @return ·µ»Ø·´×ªÏòÁ¿
+	 * å‘é‡åè½¬
+	 * @param A è¾“å…¥å‘é‡A
+	 * @return è¿”å›åè½¬å‘é‡
 	 */
 	public static double[] vectorReverse(double[] A)
 	{
@@ -247,10 +247,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * ¾ØÕó·¶Êı
-	 * @param A ÊäÈë¾ØÕóA
-	 * @param N ÊäÈëÃİÊıN
-	 * @return ·µ»ØN´Î·¶ÊıL(N)
+	 * çŸ©é˜µèŒƒæ•°
+	 * @param A è¾“å…¥çŸ©é˜µA
+	 * @param N è¾“å…¥å¹‚æ•°N
+	 * @return è¿”å›Næ¬¡èŒƒæ•°L(N)
 	 */
 	public static double matrixNorm(double[][] A,int N)
 	{
@@ -266,10 +266,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * ÏòÁ¿·¶Êı
-	 * @param A ÊäÈëÏòÁ¿A
-	 * @param N ÊäÈëÃİÊıN
-	 * @return ·µ»ØN´Î·¶ÊıL(N)
+	 * å‘é‡èŒƒæ•°
+	 * @param A è¾“å…¥å‘é‡A
+	 * @param N è¾“å…¥å¹‚æ•°N
+	 * @return è¿”å›Næ¬¡èŒƒæ•°L(N)
 	 */
 	public static double vectorNorm(double[] A,int N)
 	{
@@ -283,10 +283,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * ÏòÁ¿ÓàÏÒ
-	 * @param A ÊäÈëÏòÁ¿A
-	 * @param B ÊäÈëÏòÁ¿B
-	 * @return ¼Ğ½ÇÓàÏÒ
+	 * å‘é‡ä½™å¼¦
+	 * @param A è¾“å…¥å‘é‡A
+	 * @param B è¾“å…¥å‘é‡B
+	 * @return å¤¹è§’ä½™å¼¦
 	 */
 	public static double vectorCosine(double[] A,double[] B)
 	{
@@ -300,9 +300,9 @@ public class Matrix {
 	}
 	
 	/**
-	 * Éú³É¶Ô½Ç¾ØÕó
-	 * @param A ÊäÈëÏòÁ¿A
-	 * @return ¶Ô½Ç¾ØÕó
+	 * ç”Ÿæˆå¯¹è§’çŸ©é˜µ
+	 * @param A è¾“å…¥å‘é‡A
+	 * @return å¯¹è§’çŸ©é˜µ
 	 */
 	public static double[][] diagMatrix(double[] A)
 	{
@@ -315,9 +315,9 @@ public class Matrix {
 	}
 	
 	/**
-	 * ¾ØÕó¼£ÔËËã
+	 * çŸ©é˜µè¿¹è¿ç®—
 	 * @param A
-	 * @return ¶Ô½ÇÔªËØµÄºÍ
+	 * @return å¯¹è§’å…ƒç´ çš„å’Œ
 	 */
 	public static double matrixTr(double[][] A)
 	{
@@ -331,15 +331,5 @@ public class Matrix {
 		
 		return result;
 	}
-	public static void main(String[] args) throws Exception
-	{
-		double[][] a={{1,2,-1},{3,1,0},{-1,-1,-2}};
-		double[] b = {0,1};
-		double[] c = {1,1};
-		//double[][] b={{-1,4,0},{0,1,5}};
-		System.out.println( matrixTr(a));//Arrays.toString()
-		System.out.println(vectorCosine(b,c));
-
-	}
-			
+		
 }
